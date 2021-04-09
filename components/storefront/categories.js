@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {Grid }from '@material-ui/core';
 import Box from "@material-ui/core/Box";
 import SokoStoreFront from '../storefront/layout';
-import { blue } from "@material-ui/core/colors";
+import Footer from '../footer';
+import Search from '../storefront/searchproducts';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,32 +44,6 @@ function a11yProps(index) {
   };
 }
 
-// const theme = createMuiTheme({
-//   overrides: {
-//     MuiTabs: {
-//       // indicator: {
-//       //   backgroundColor: orange[700]
-//       // }
-//       textAlign: 'left',
-//       justifyContent: 'left'
-//     },
-//     MuiTab: {
-//       root: {
-//           textAlign: 'left',
-//           justifyContent: 'left'
-//       },
-//       selected: {
-//         color: blue[700],
-//         backgroundColor: blue[100],
-//         // "&:hover": {
-//         //   backgroundColor: green[100],
-//         //   color: green[700]
-//         // }
-//       }
-//     }
-//   }
-// });
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,22 +53,20 @@ const useStyles = makeStyles((theme) => ({
     height: 224,
   },
   tabs: {
-    // borderTop:`1px solid ${theme.palette.divider}` ,
     borderRight: `1px solid ${theme.palette.divider}`,
     height: '450px', 
-    // width: '880px',
     marginTop: '20px',
-    
   },
-
   tab: {
     paddingRight: '100px',
   },
-
-  indicator: {
-    // backgroundColor: 'lightblue',
-  }
-
+  searchbar: {
+    top: '190px',
+    position: 'absolute',
+    left: '31%',
+    right: '32%',
+  },
+ 
 }));
 
 
@@ -108,7 +81,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    // <MuiThemeProvider theme={theme}>
+    <>
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Grid item lg={3}>
@@ -122,13 +95,13 @@ export default function VerticalTabs() {
             className={`${classes.tabs} ${classes.indicator}`}
             
           >
-            <Tab className={classes.tab} label="Electronics(12)" {...a11yProps(0)} />
-            <Tab className={classes.tab} label="Face Masks" {...a11yProps(1)} />
-            <Tab className={classes.tab} label="Item Three" {...a11yProps(2)} />
-            <Tab className={classes.tab} label="Item Four" {...a11yProps(3)} />
-            <Tab className={classes.tab} label="Item Five" {...a11yProps(4)} />
-            <Tab className={classes.tab} label="Item Six" {...a11yProps(5)} />
-            <Tab className={classes.tab} label="Item Seven" {...a11yProps(6)} />
+            <Tab className={classes.tab} label="Electronics (12)" {...a11yProps(0)} />
+            <Tab className={classes.tab} label="Face Masks (3)" {...a11yProps(1)} />
+            <Tab className={classes.tab} label="Fresh Food (8)" {...a11yProps(2)} />
+            <Tab className={classes.tab} label="Grocery (6)" {...a11yProps(3)} />
+            <Tab className={classes.tab} label="Home (24)" {...a11yProps(4)} />
+            <Tab className={classes.tab} label="Kids (9)" {...a11yProps(5)} />
+            <Tab className={classes.tab} color="primary" style={{color: '#1569C8', fontWeight: 'bold'}} label="View all categories  >" {...a11yProps(6)}></Tab> 
           </Tabs>
           </Grid>
           <Grid item lg={6} >
@@ -136,27 +109,43 @@ export default function VerticalTabs() {
             <SokoStoreFront/>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <SokoStoreFront/>
+            <div className={classes.searchbar}>
+              <Search/>
+            </div>
+            Face Masks
           </TabPanel>
           <TabPanel value={value} index={2}>
+            <div className={classes.searchbar}>
+              <Search/>
+            </div>
             Fresh Food
           </TabPanel>
           <TabPanel value={value} index={3}>
+            <div className={classes.searchbar}>
+              <Search/>
+            </div>
             Grocery
           </TabPanel>
           <TabPanel value={value} index={4}>
+            <div className={classes.searchbar}>
+              <Search/>
+            </div>
             Home
           </TabPanel>
           <TabPanel value={value} index={5}>
+            <div className={classes.searchbar}>
+              <Search/>
+            </div>
             Kids
           </TabPanel>
           <TabPanel value={value} index={6}>
-            View all categories
+            All categories
           </TabPanel>
           </Grid>
+         <Footer/>
           </Grid>
-      </div>
-    // </MuiThemeProvider>
+        </div>
+       </>
   );
 }
 

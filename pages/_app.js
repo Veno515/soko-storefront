@@ -12,7 +12,8 @@ import { CartProvider } from '../hooks/useCart';
 
 const useStyles = makeStyles((theme) => ({
   body: {
-    padding: '0 192px 0 192px',
+    paddingLeft: theme.spacing(24) ,
+    paddingRight: theme.spacing(24) ,
   },
  
 }));

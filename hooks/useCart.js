@@ -4,7 +4,7 @@ const cartContex = createContext()
 
 
 const useCartData = () => {
-    const [cart,setCart] = useState(12)
+    const [cart,setCart] = useState(0)
 
     // useEffect(() => {
     //     setCart(cart + 1)

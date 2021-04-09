@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
     },
     bag: {
+        // marginTop: theme.spacing(-11),
         marginLeft: theme.spacing(5),
         paddingLeft: theme.spacing(5),
         borderLeft: `1px solid ${theme.palette.divider}`,

@@ -1,10 +1,12 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Badge, Button, Grid, Paper, Typography, ButtonBase } from '@material-ui/core';
+import { Badge, Button, Grid, Paper, Typography, ButtonBase, AppBar } from '@material-ui/core';
+import Link from 'next/link';
 import Search from '../storefront/searchproducts';
 import Bag from '../storefront/bag';
 import { useCart } from '../../hooks/useCart';
+import Header from '../header';
 
 const useStyles = makeStyles((theme) => ({
   // root: {
@@ -74,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
   image: {
     width: 128,
     height: 128,
+    cursor: 'pointer'
   },
   img: {
     margin: 'auto',
@@ -83,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '10px',
   },
    searchbar: {
-    top: '190px',
+    top: '170px',
     position: 'absolute',
     left: '31%',
     right: '32%',
@@ -111,12 +114,16 @@ const useStyles = makeStyles((theme) => ({
   },
   detail: {
     marginTop: theme.spacing(3),
+    cursor: 'pointer'
   },
   productname: {
     fontWeight: 'bold'
   },
   buttontext: {
     fontWeight: 'bold'
+  },
+  footer: {
+    marginTop: theme.spacing(100),
   }
 
 }));
@@ -163,44 +170,56 @@ export default function Category() {
         <Grid item>
         {data.map((filteredDatum) => (
            <Paper elevation={0} className={classes.paper} key={filteredDatum.productname}>
-           <Grid container spacing={2}>
-             <Grid item>
-               <ButtonBase className={classes.image}>
-                 <img className={classes.img} alt={filteredDatum.productname} src={filteredDatum.image} />
-               </ButtonBase>
-             </Grid>
-             <Grid item xs={12} sm container>
-               <Grid item xs container direction="column" spacing={2}>
-                 <Grid item xs>
-                   {/* <Typography gutterBottom variant="subtitle1">
-                     Standard license
-                   </Typography> */}
-                   <div className={classes.detail}>
-                    <Typography className={classes.productname} gutterBottom>
-                      {filteredDatum.productname}
-                    </Typography>
-                    <Typography variant="body1" color="textSecondary">
-                      UGX {filteredDatum.price}
-                    </Typography>
-                   </div>
-                 </Grid>
-                 <Grid item>
-                   {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                     Remove
-                   </Typography> */}
-                 </Grid>
-               </Grid>
-               <Grid item>
-                 <Button onClick={() => {
-                  setCart(cart +1);
-          }}  className={classes.addtobagbtn} variant="outlined" color="primary"><Typography className={classes.buttontext}>+ Add</Typography></Button>
-               </Grid>
-             </Grid>
-           </Grid>
-         </Paper>
+             
+              <Grid container spacing={2}>
+                <Link href="/[1]">
+                  <Grid item>
+                    <ButtonBase className={classes.image}>
+                      <img className={classes.img} alt={filteredDatum.productname} src={filteredDatum.image} />
+                    </ButtonBase>
+                  </Grid>
+                </Link>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                        {/* <Typography gutterBottom variant="subtitle1">
+                          Standard license
+                        </Typography> */}
+                      <Link href="/[1]">
+                        <div className={classes.detail}>
+                          <Typography className={classes.productname} gutterBottom>
+                            {filteredDatum.productname}
+                          </Typography>
+                          <Typography variant="body1" color="textSecondary">
+                            UGX {filteredDatum.price}
+                          </Typography>
+                        </div>
+                      </Link>
+                    </Grid>
+                    
+
+                    <Grid item>
+                      {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
+                        Remove
+                      </Typography> */}
+                    </Grid>
+                  </Grid>
+                  <Grid item>
+                    <Button onClick={() => {
+                      setCart(cart +1);
+              }}  className={classes.addtobagbtn} variant="outlined" color="primary"><Typography className={classes.buttontext}>+ Add</Typography></Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+            
+          </Paper>
          ))}
         </Grid>
       </Grid>
+        
+      {/* <div className={classes.footer}>
+        <Typography color="textSecondary">STORE DETAILS</Typography>
+      </div> */}
     </div>
   );
 }
