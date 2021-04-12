@@ -133,6 +133,9 @@ const useStyles = makeStyles((theme) => ({
     "@media (width: 411px)":{
       marginLeft: theme.spacing(-45)
     },
+    "@media (width: 414px)": {
+      marginLeft: theme.spacing(-45)
+    },
     "@media (width: 768px)":{
       marginLeft: theme.spacing(-46)
     }
