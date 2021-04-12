@@ -31,8 +31,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import { TextField } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import Router , {useRouter}  from 'next/router';
+import Success from '../components/success';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -56,23 +57,38 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width: '25ch',
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
   },
   phonenumberinput: {
     minWidth: 400,
     minHeight: 60,
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: 400,
+      minWidth: 200,
+    },
     color:'#808080',
     fontSize:'20px',
     border: '1px solid #808080',
   },
   loginbutton: {
     marginLeft: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+      marginTop: theme.spacing(2),
+    },
     minWidth: 150,
     maxHeight: 60,
     backgroundColor: '#FADC5B',
   },
   disabledbutton: {
     marginLeft: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1),
+      marginTop: theme.spacing(2),
+    },
     minWidth: 150,
     maxHeight: 60,
   },
@@ -125,7 +141,10 @@ const useStyles = makeStyles((theme) => ({
   },
   enteraddress: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column'
+      },
   },
   phonenum: {
       paddingTop: theme.spacing(3)
@@ -135,11 +154,15 @@ const useStyles = makeStyles((theme) => ({
   },
   addresscontainer: {
       position: 'relative',
+      height: 200
   },
   addaddress: {
     color: '#1569C8',
-    position: 'fixed',
-    top: '56%',
+    position: 'absolute',
+    top: '46%',
+    [theme.breakpoints.down('sm')]: {
+      top: 100
+    },
     left: '41%',
     /* bring your own prefixes */
     transform: 'translate(-50%, -50%)',
@@ -190,7 +213,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     marginTop: theme.spacing(2),
-  }
+  },
  
 }));
 
@@ -258,6 +281,7 @@ export default function VerticalLinearStepper() {
 
   return (
     <div className={classes.root}>
+      <Grid container><Grid item sm={12} xs={12}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
           <Step key={label}>
@@ -425,7 +449,7 @@ export default function VerticalLinearStepper() {
                             // variant="outlined"
                             placeholder="E.g Kalema Apartments, Plot 00 Johnson Rd, Room 24B" className={classes.multirowtextfield} name="address" type="text" /><br/>
                           <ErrorMessage className={classes.errormessage} name="address" /><br/>
-                          { <Button disabled>Add Address</Button>}
+                          {/* { <Button disabled>Add Address</Button>} */}
                           <center>
                           <Button className={classes.editaddressbutton} type="submit" size="large" color="primary" onClick={() => {
                             handleNext();
@@ -460,7 +484,7 @@ export default function VerticalLinearStepper() {
                   
                  
                       <Button className={classes.editaddressbutton} type="submit" size="large" color="primary" onClick={() => {
-                            setTimeout(() => {router.push('/')},1000)
+                            setTimeout(() => {router.push('/order-success')},1000)
                             handleNext();
                           }}><Typography variant="h6" className={classes.CTAbuttonstext}>Place Order</Typography></Button>
                           </div>
@@ -480,6 +504,7 @@ export default function VerticalLinearStepper() {
           </Button> */}
         </Paper>
       )}
+      </Grid></Grid>
     </div>
   );
 }

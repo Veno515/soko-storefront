@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
       },
       verify: {
         borderRight: `1px solid ${theme.palette.divider}`,
+        [theme.breakpoints.down('sm')]: {
+            borderRight: `none`,  
+        },
         height: 500
       }
     }))
@@ -21,7 +24,7 @@ const Bag = () => {
     return (
         <div>
             <Grid container>
-                <Grid item lg={8}>
+                <Grid item lg={8} md={8}>
                     <div className={classes.verify}>
                         <AddDetails/>
                     </div>

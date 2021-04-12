@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         padding: theme.spacing(3),
+        [theme.breakpoints.down('sm')]: {
+          marginTop: theme.spacing(25)
+        },
         
       },
       categorytitle: {

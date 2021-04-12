@@ -82,8 +82,16 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
       float: 'left',
       paddingTop: theme.spacing(1),
-      marginLeft: theme.spacing(-4)
+      marginLeft: theme.spacing(-4),
     }
+  },
+  bag:{
+    display: 'flex',
+    flexDirection:'row',
+    [theme.breakpoints.down('sm')]: {
+      width: 40,
+      marginBottom: theme.spacing(1),
+    },
   }
 }));
 
@@ -115,14 +123,16 @@ export default function Target() {
           </Grid>
           <Grid item sm={12} xs={12} m6={6} lg={6}>
             <div className={classes.rightsidecont}>
-              <Badge color="secondary" badgeContent={cart}>
+              <div className={classes.bag}> 
+                <Badge color="secondary" badgeContent={cart}>
+                  <Link href='/bag'>
+                    <ShoppingBasketOutlinedIcon fontSize="large" style={{color:'grey',cursor:'pointer'}}/>
+                  </Link>
+                </Badge>
                 <Link href='/bag'>
-                  <ShoppingBasketOutlinedIcon fontSize="large" style={{color:'grey',cursor:'pointer'}}/>
+                  <Typography className={classes.navtext} variant="h6" color="textSecondary">Bag</Typography>
                 </Link>
-              </Badge>
-              <Link href='/bag'>
-                <Typography className={classes.navtext} variant="h6" color="textSecondary">Bag</Typography>
-              </Link>
+              </div>
               <div className={classes.account}>
                 <PersonOutlineOutlinedIcon fontSize="large" style={{color:'grey',cursor:'pointer'}}/>
                 <Link href='/#'>
