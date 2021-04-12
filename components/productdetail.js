@@ -152,6 +152,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 250,
     minHeight: 50,
     backgroundColor: '#FADC5B',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(1), 
+      marginTop: theme.spacing(2)
+    },
   },
   count: {
     textAlign: 'center',
@@ -206,9 +210,8 @@ export default function ProductDetail() {
       <div className={classes.root}>
         <Grid container spacing={3}>
             <Grid item lg={12}><div className={classes.heading}><Link href="/"><ChevronLeftIcon fontSize="large" style={{color:'grey', cursor:'pointer'}}/></Link> <Typography className={classes.headingtext} variant="h5">Furniture</Typography></div></Grid>
-            <Grid item lg={5} sm={12} xs={12}>
+            <Grid item lg={5} md={5} sm={12} xs={12}>
                 <Paper square elevation={0} className={classes.header}>
-                {/* <Typography>{tutorialSteps[activeStep].label}</Typography> */}
                 </Paper>
                 <AutoPlaySwipeableViews
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -244,7 +247,7 @@ export default function ProductDetail() {
     //   }
     />
                 </Grid>
-                <Grid item lg={7} sm={12} xs={12}>
+                <Grid item lg={7} md={7} sm={12} xs={12}>
                     <div className={classes.productdetailcontainer}>
                         <Typography className={classes.productName} variant="h6">Norbury Scandinavian Wood Leg Ottoman</Typography>
                         <Typography className={classes.productdescription} color="textSecondary">Lend a fine combination of simple elegance and cool comfort to your living space

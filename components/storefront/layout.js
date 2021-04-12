@@ -12,12 +12,25 @@ const useStyles = makeStyles((theme) => ({
     row: {
         display: 'flex',
         flexDirection: 'row',
+        [theme.breakpoints.down('sm')]: {
+            flexDirection:'column',
+        }
+    },
+    category: {
+        [theme.breakpoints.down('xs')]: {
+           width:'120%',
+          }
     },
     bag: {
-        // marginTop: theme.spacing(-11),
-        marginLeft: theme.spacing(5),
+        marginTop: theme.spacing(-9),
+        marginLeft: theme.spacing(17),
         paddingLeft: theme.spacing(5),
         borderLeft: `1px solid ${theme.palette.divider}`,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: theme.spacing(15),
+            marginLeft: theme.spacing(-9),
+            borderLeft: `none`,
+          }
     }
 }));
 
@@ -26,14 +39,20 @@ const SokoStoreFront =() => {
 
     return (
         <div className={classes.root}>
-            <div className={classes.row}>
-                <div>
+            <Grid container>
+                <div className={classes.row}>
+                <Grid item lg={6} sm={12} xs={12}>
+                    <div className={classes.category}>
                     <Category/>
+                    </div>
+                </Grid>
+                <Grid item lg={4}>
+                    <div className={classes.bag}> 
+                        <Bag/>
+                    </div>
+                </Grid>
                 </div>
-                <div className={classes.bag}>
-                    <Bag/>
-                </div>
-            </div>
+            </Grid>
         </div>
     )
 }

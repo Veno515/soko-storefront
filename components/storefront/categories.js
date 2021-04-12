@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     height: '450px', 
+    [theme.breakpoints.down('sm')]: {
+      height: '250px',
+    },
     marginTop: '20px',
   },
   tab: {
@@ -65,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     left: '31%',
     right: '32%',
+    [theme.breakpoints.down('sm')]: {
+      left: '5%',
+      right: '5%',
+      top: 730
+    }
   },
  
 }));
@@ -84,7 +92,7 @@ export default function VerticalTabs() {
     <>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          <Grid item lg={3}>
+          <Grid item lg={3} md={3} sm={12} xs={12}>
           <Tabs
             orientation="vertical"
             variant="scrollable"
@@ -104,7 +112,7 @@ export default function VerticalTabs() {
             <Tab className={classes.tab} color="primary" style={{color: '#1569C8', fontWeight: 'bold'}} label="View all categories  >" {...a11yProps(6)}></Tab> 
           </Tabs>
           </Grid>
-          <Grid item lg={6} >
+          <Grid item lg={8} md={3} sm={12} xs={12}>
           <TabPanel value={value} index={0}>
             <SokoStoreFront/>
           </TabPanel>
@@ -142,7 +150,9 @@ export default function VerticalTabs() {
             All categories
           </TabPanel>
           </Grid>
-         <Footer/>
+          <Grid item md={12}>
+            <Footer/>
+          </Grid>
           </Grid>
         </div>
        </>

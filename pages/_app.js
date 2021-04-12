@@ -14,7 +14,16 @@ const useStyles = makeStyles((theme) => ({
   body: {
     paddingLeft: theme.spacing(24) ,
     paddingRight: theme.spacing(24) ,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: theme.spacing(2) ,
+      paddingRight: theme.spacing(2) ,
+    },
+    [theme.breakpoints.down('md')]:  {
+      paddingLeft: theme.spacing(2) ,
+      paddingRight: theme.spacing(2) ,
+    },
   },
+  
  
 }));
 

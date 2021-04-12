@@ -1,6 +1,6 @@
 import React from "react";
 import EmptyBag from '../components/emptybag';
-import Bag from '../components/bag';
+import Bag from '../components/baglayout';
 import { useCart } from '../hooks/useCart';
 
 const SokoBag = () => {

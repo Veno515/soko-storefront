@@ -1,6 +1,8 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from "@material-ui/core";
+import AddDetails from './addDetails';
+import Products from '../components/productsinbag';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,12 +23,12 @@ const Bag = () => {
             <Grid container>
                 <Grid item lg={8}>
                     <div className={classes.verify}>
-                        Add details
+                        <AddDetails/>
                     </div>
                 </Grid>
                 <Grid item lg={4}>
                     <div>
-                        your bag
+                        <Products/>
                     </div>
                 </Grid>
             </Grid>

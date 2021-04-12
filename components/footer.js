@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Button, Grid, Typography } from '@material-ui/core';
+import { AppBar, Button, Grid, Toolbar, Typography } from '@material-ui/core';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { makeStyles } from '@material-ui/core/styles';
 // import Categories from '../storefront/categories';
@@ -12,14 +12,11 @@ const useStyles = makeStyles((theme) => ({
     },
     benefitsandfootercontainer: {
         position: 'relative',
-        width: '100%'
+        
       },
       benefits: {
-        // position: "absolute",
         marginTop: theme.spacing(8),
-        marginLeft: theme.spacing(-24),
-        // marginTop: theme.spacing(1),
-        width: '103.4%'
+        //  width: '103.4%',
       },
       footercontainer: {
         position: 'relative',
@@ -27,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       footer: {
         // position: 'absolute',
         marginTop: theme.spacing(6),
+        
         // left: theme.spacing(75),
       }, 
       footertext: {
@@ -57,43 +55,44 @@ const useStyles = makeStyles((theme) => ({
       benefitsimagesone: {
         height: 60,
         width: 75,
-        marginLeft: theme.spacing(79),
+        //marginLeft: theme.spacing(79),
         marginTop: theme.spacing(8),
       },
       benefitsimagestwo: {
         height: 65,
         width: 50,
-        marginLeft: theme.spacing(28),
+       // marginLeft: theme.spacing(28),
         marginTop: theme.spacing(8),
       },
       benefitsimagesthree: {
         height: 60,
         width: 60,
-        marginLeft: theme.spacing(28),
+       // marginLeft: theme.spacing(28),
         marginTop: theme.spacing(8),
       },
       benefittext: {
         color: '#fff',
-        marginLeft: theme.spacing(76),
-        marginTop: theme.spacing(1),
+        marginLeft: theme.spacing(1),
+        // marginTop: theme.spacing(1),
         fontSize: '20px'
       },
       benefittexttwo: {
         color: '#fff',
-        marginLeft: theme.spacing(21),
+        marginLeft: theme.spacing(1),
         // marginTop: theme.spacing(1),
         fontSize: '20px'
       },
       benefittextthree: {
         color: '#fff',
-        marginLeft: theme.spacing(21),
+        marginLeft: theme.spacing(1),
         marginTop: theme.spacing(1),
         fontSize: '20px'
       },
-      benefitsbar: {
-        display: 'flex',
-        flexDirection: 'row',
-      }
+      appbarcontent: {
+        flex: '33%',
+        // padding: '10px',
+        // paddingLeft: '10%',
+      },
     
 }));
 
@@ -103,22 +102,38 @@ const Footer =() => {
     return (
         <div className={classes.root}>
             <div className={classes.benefitsandfootercontainer}>
-            <div className={classes.benefits}>
-              <AppBar className={classes.benefitsbar} elevation={0} color="primary" position="static" style={{width: '120%', height: 230}}>
-                <div>
+            {/* <div className={classes.benefits}>
+              <AppBar className={classes.benefitsbar} elevation={0} color="primary" position="static" style={{ height: 230}}>
+                <div className={classes.appbarcontent}>
                   <img className={classes.benefitsimagesone} src="/truck.png" alt="Truck"></img>
                   <Typography className={classes.benefittext}>Fast Delivery</Typography>
                 </div>
-                <div>
+                <div className={classes.appbarcontent}>
                   <img className={classes.benefitsimagestwo} src="/buyerprotection.png" alt="Buyer Protection"></img>
                   <Typography className={classes.benefittexttwo}>Buyer Protection</Typography>
                 </div>
-                <div>
+                <div className={classes.appbarcontent}>
                   <img className={classes.benefitsimagesthree} src="/24.png" alt="Buyer Protection"></img>
                   <Typography className={classes.benefittextthree}>Customer Support</Typography>
                 </div>
               </AppBar>
-            </div>
+            </div> */}
+             <AppBar position="static" style={{height:250}}>
+              <Toolbar>
+                 <div className={classes.appbarcontent}>
+                  <img className={classes.benefitsimagesone} src="/truck.png" alt="Truck"></img>
+                  <Typography className={classes.benefittext}>Fast Delivery</Typography>
+                </div>
+                <div className={classes.appbarcontent}>
+                  <img className={classes.benefitsimagestwo} src="/buyerprotection.png" alt="Buyer Protection"></img>
+                  <Typography className={classes.benefittexttwo}>Buyer Protection</Typography>
+                </div>
+                <div className={classes.appbarcontent}>
+                  <img className={classes.benefitsimagesthree} src="/24.png" alt="Buyer Protection"></img>
+                  <Typography className={classes.benefittextthree}>Customer Support</Typography>
+                </div>
+              </Toolbar>
+            </AppBar>
             <div className={classes.footercontainer}>
               <div className={classes.footer}>
                 <Typography color="textSecondary" className={classes.footertext}>STORE DETAILS</Typography> <br/>

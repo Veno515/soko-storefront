@@ -26,9 +26,11 @@ const useStyles = makeStyles((theme) => ({
       bagdetailbold: {
         fontWeight: 'bold',
         textAlign: 'center',
+        width: 300
       },
       bagdetailregular: {
         textAlign: 'center',
+        width: 300
       }
 }));
 

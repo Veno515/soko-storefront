@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,14 +16,27 @@ const useStyles = makeStyles((theme) => ({
   header: {
     width: '100%',
     color: 'theme.color.primary',
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '100%',
+    },
+    
   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
+
   title: {
-    flexGrow: 1,
-    paddingLeft: '192px',
+    marginLeft: theme.spacing(24),
     color: 'theme.color.white',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.up('xs')]: {
+      marginLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.spacing(24),
+    },
   },
   logo: {
     marginTop: '10px'
@@ -35,13 +49,17 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.header} position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Store made with <img className={classes.logo} src="/logo.png" alt="Soko Logo" width="3%" height="3%"></img>
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Grid container>
+        <Grid item sm={12} md={12}> 
+          <AppBar className={classes.header} position="fixed">
+            <Toolbar>
+              <Typography variant="h6" className={classes.title}>
+                Store made with <img className={classes.logo} src="/logo.png" alt="Soko Logo" width="10%" height="10%"></img>
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Grid>
+      </Grid>
     </div>
   );
 }

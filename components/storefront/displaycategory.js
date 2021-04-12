@@ -66,12 +66,20 @@ const useStyles = makeStyles((theme) => ({
 
   root: {
     flexGrow: 1,
+    paddingTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(10),
+    }
     // borderRight: `1px solid ${theme.palette.divider}`,
   },
   paper: {
     paddingTop: theme.spacing(3),
     marginLeft: -40,
     width: 700,
+    [theme.breakpoints.down('sm')]: {
+     width: '100%',
+     borderBottom: `1px solid ${theme.palette.divider}`,
+    }
   },
   image: {
     width: 128,
@@ -90,6 +98,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     left: '31%',
     right: '32%',
+    [theme.breakpoints.down('sm')]: {
+      left: '5%',
+      right: '5%',
+      top: 730
+    }
   },
    categorytitle: {
     marginTop: '-88px',
@@ -106,9 +119,23 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   addtobagbtn: {
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(10),
     width: 100,
     border: '2px solid',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(15),
+      marginBottom: theme.spacing(3),
+      marginLeft: theme.spacing(-40)
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: theme.spacing(-38)
+    },
+    "@media (width: 411px)":{
+      marginLeft: theme.spacing(-45)
+    },
+    "@media (width: 768px)":{
+      marginLeft: theme.spacing(-46)
+    }
     // position: 'absolute',
     // right: 50
   },
@@ -163,7 +190,7 @@ export default function Category() {
   return (
     <div className={classes.root}>
       <div className={classes.searchbar}>
-        <Search/>
+        <center><Search/></center>
       </div>
       <Typography className={classes.categorytitle} variant="h5">Electronics <Box component="span"><Badge className={classes.categoryquantity}><Typography className={classes.num}>12</Typography></Badge></Box></Typography>
       <Grid container>
@@ -204,7 +231,7 @@ export default function Category() {
                       </Typography> */}
                     </Grid>
                   </Grid>
-                  <Grid item>
+                  <Grid item >
                     <Button onClick={() => {
                       setCart(cart +1);
               }}  className={classes.addtobagbtn} variant="outlined" color="primary"><Typography className={classes.buttontext}>+ Add</Typography></Button>
