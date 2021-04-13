@@ -52,7 +52,6 @@ const Simple = ({ deviceType }) => {
       itemClass="image-item"
       responsive={responsive}
       renderButtonGroupOutside={true}
-      // style={{width: '100%'}}
     >
       {images.slice(0, 10).map(image => {
         return (

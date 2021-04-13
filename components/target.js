@@ -1,13 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Box from '@material-ui/core/Box';
-import StorefrontIcon from '@material-ui/icons/Storefront';
 import { Badge, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Storefront from '@material-ui/icons/Storefront';
 import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import Category from '../components/storefront/displaycategory';
 import { useCart } from '../hooks/useCart';
 
 const useStyles = makeStyles((theme) => ({
@@ -69,13 +66,11 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   navtext: {
-    // paddingLeft: theme.spacing(2),
     marginTop: theme.spacing(1),
     cursor: 'pointer',
   },
   account: {
     paddingLeft: theme.spacing(4),
-    // width: 300,
     display: 'flex',
     flexDirection:'row',
     [theme.breakpoints.down('sm')]: {
@@ -99,14 +94,6 @@ export default function Target() {
   const classes = useStyles();
 
   const {cart,setCart} = useCart();
-
-  // console.log(cart);
-
-  // setTimeout(() => {
-  //   setCart(cart++)
-  // console.log(cart);
-
-  // }, 2000);
 
   return (
     <div className={classes.root}>

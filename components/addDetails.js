@@ -12,14 +12,9 @@ import Input from 'react-phone-number-input/input';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import Dialog from '@material-ui/core/Dialog';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-import {UrgeWithPleasureComponent} from '../components/verificationtimer';
 import Draggable from 'react-draggable';
 import ReactCodeInput from 'react-verification-code-input';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
@@ -30,10 +25,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import { Grid, TextField } from '@material-ui/core';
-import Router , {useRouter}  from 'next/router';
-import Success from '../components/success';
+import { Grid } from '@material-ui/core';
+import {useRouter}  from 'next/router';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -164,7 +157,6 @@ const useStyles = makeStyles((theme) => ({
       top: 100
     },
     left: '41%',
-    /* bring your own prefixes */
     transform: 'translate(-50%, -50%)',
   },
   active: {
@@ -251,7 +243,6 @@ export default function VerticalLinearStepper() {
   const classes = useStyles();
   const [value, setValue] = React.useState()
   const [activeStep, setActiveStep] = React.useState(0);
-  const [active, setActive] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const steps = getSteps();
   const router = useRouter();
@@ -264,9 +255,6 @@ export default function VerticalLinearStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   const handleClickOpen = () => {
     setOpen(true);

@@ -1,17 +1,14 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Badge, Button, Grid, Paper, Typography, ButtonBase, Box } from '@material-ui/core';
+import { Badge, Typography, Box } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((_theme) => ({
     root: {
         flexGrow: 1,
-        // borderLeft: `1px solid ${theme.palette.divider}`,
       },
     categorytitle: {
          marginTop: '-88px',
          width: 100,
-        // paddingLeft: theme.spacing(3),
-        // marginLeft: '-7%',
         fontWeight: 'bold',
       },
       categoryquantity: {

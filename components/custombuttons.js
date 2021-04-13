@@ -2,31 +2,7 @@ import * as React from "react";
 import { Button, makeStyles } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import { ThemeConsumer } from "styled-components";
 
-
-// const CustomLeftArrow = ({ onClick }) => (
-//   <i onClick={() => onClick()} className="custom-left-arrow" />
-// );
-// const CustomRightArrow = ({ onClick }) => {
-//   return <i className="custom-right-arrow" onClick={() => onClick()} />;
-// };
-
-// const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }) => {
-//   const { totalItems, currentSlide } = carouselState;
-//   return (
-//     <div className="custom-button-group">
-//       <div>Current slide is {currentSlide}</div>
-//       <button onClick={() => previous()}>Previous slide</button>
-//       <button onClick={() => next()}>Next slide</button>
-//       <button
-//         onClick={() => goToSlide(Math.floor(Math.random() * totalItems + 1))}
-//       >
-//         Go to a random slide
-//       </button>
-//     </div>
-//   );
-// };
 const useStyles = makeStyles((theme) => ({
     carouselbuttons: {
         textAlign: 'center',

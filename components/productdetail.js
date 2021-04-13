@@ -9,14 +9,10 @@ import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import { yellow } from '@material-ui/core/colors';
 import Footer from '../components/footer';
 import { useCart } from '../hooks/useCart';
-import Carousel from '../components/carousel';
 import Index from "./simplecarousel";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -65,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(0.5)
   },
   tabs: {
-    // borderRight: `1px solid ${theme.palette.divider}`,
     height: '450px', 
     marginTop: '20px',
   },
@@ -119,11 +114,8 @@ const useStyles = makeStyles((theme) => ({
   discountpercent: {
     color: 'white',
     fontWeight: 'bold',
-    // border: '10px solid red',
     marginTop: theme.spacing(20),
     marginLeft: theme.spacing(3),
-    // width: 50,
-    // backgroundColor:'red'
   },
   buttongroup: {
     marginLeft: theme.spacing(3),
@@ -160,7 +152,6 @@ const useStyles = makeStyles((theme) => ({
   count: {
     textAlign: 'center',
     paddingTop: theme.spacing(1),
-    // paddingLeft:theme.spacing(1),
     outline: '1px solid lightBlue',
     maxWidth: 20,
     minWidth: 20,
@@ -233,18 +224,7 @@ export default function ProductDetail() {
                     position="static"
                     activeStep={activeStep}
                     className={classes.root}
-    //   nextButton={
-    //     <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-    //       Next
-    //       {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-    //     </Button>
-    //   }
-    //   backButton={
-    //     <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-    //       {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-    //       Back
-    //     </Button>
-    //   }
+   
     />
                 </Grid>
                 <Grid item lg={7} md={7} sm={12} xs={12}>

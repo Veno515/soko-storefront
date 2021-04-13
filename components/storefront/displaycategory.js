@@ -1,76 +1,18 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { Badge, Button, Grid, Paper, Typography, ButtonBase, AppBar } from '@material-ui/core';
+import { Badge, Button, Grid, Paper, Typography, ButtonBase } from '@material-ui/core';
 import Link from 'next/link';
 import Search from '../storefront/searchproducts';
-import Bag from '../storefront/bag';
 import { useCart } from '../../hooks/useCart';
-import Header from '../header';
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   borderRight: `1px solid ${theme.palette.divider}`,
-  //   marginTop: '-120px',
-  // },
-  // productimage: {
-  //   borderRadius: '10px',
-  // },
-  // productname: {
-  //   fontWeight: 'bold',
-  //   // width: '100%',
-  // },
-  // products: {
-  //   display: 'flex',
-  //   flexDirection: 'row',
-  //   marginLeft: '-7%',
-  //   marginTop: '24px',
-  //   // width: 950
-  // },
-  // price: {
-  //   marginTop: '-20px',
-  // },
-  // searchbar: {
-  //   top: '190px',
-  //   position: 'absolute',
-  //   left: '31%',
-  //   right: '32%',
-  // },
-  // addtobagbtn: {
-  //   // marginTop: '-40px',
-  //   float: 'right',
-  //   width: 100,
-  //   border: '2px solid',
-  //   // position: 'absolute',
-  //   // right: 50
-  // },
-  // btncontainer: {
-  //   // paddingLeft: '164%',
-  //   // position: 'relative',
-  // },
-
-  // categorytitle: {
-  //   marginTop: '32px',
-  //   marginLeft: '-7%',
-  //   fontWeight: 'bold',
-  // },
-  // categoryquantity: {
-  //   backgroundColor: '#1569C8',
-  //   borderRadius: '5px',
-  //   width: '30px',
-  // },
-  // num: {
-  //   color: 'white',
-  //   fontWeight: 'bold',
-  // }
-
   root: {
     flexGrow: 1,
     paddingTop: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       paddingTop: theme.spacing(10),
     }
-    // borderRight: `1px solid ${theme.palette.divider}`,
   },
   paper: {
     paddingTop: theme.spacing(3),
@@ -142,8 +84,6 @@ const useStyles = makeStyles((theme) => ({
     "@media (width: 768px)":{
       marginLeft: theme.spacing(-46)
     }
-    // position: 'absolute',
-    // right: 50
   },
   detail: {
     marginTop: theme.spacing(3),
@@ -215,9 +155,6 @@ export default function Category() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                        {/* <Typography gutterBottom variant="subtitle1">
-                          Standard license
-                        </Typography> */}
                       <Link href="/[1]">
                         <div className={classes.detail}>
                           <Typography className={classes.productname} gutterBottom>
@@ -232,9 +169,6 @@ export default function Category() {
                     
 
                     <Grid item>
-                      {/* <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                        Remove
-                      </Typography> */}
                     </Grid>
                   </Grid>
                   <Grid item >
@@ -249,10 +183,6 @@ export default function Category() {
          ))}
         </Grid>
       </Grid>
-        
-      {/* <div className={classes.footer}>
-        <Typography color="textSecondary">STORE DETAILS</Typography>
-      </div> */}
     </div>
   );
 }

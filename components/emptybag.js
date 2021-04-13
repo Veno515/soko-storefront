@@ -7,13 +7,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         paddingTop: theme.spacing(12),
-        // borderLeft: `1px solid ${theme.palette.divider}`,
       },
     categorytitle: {
          marginTop: '-88px',
          width: 100,
-        // paddingLeft: theme.spacing(3),
-        // marginLeft: '-7%',
         fontWeight: 'bold',
       },
       categoryquantity: {
@@ -27,10 +24,8 @@ const useStyles = makeStyles((theme) => ({
       },
       bagdetailbold: {
         fontWeight: 'bold',
-        // textAlign: 'center',
       },
       bagdetailregular: {
-        // textAlign: 'center',
       },
       backtohomebutton: {
         marginTop: theme.spacing(7),

@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
       categorytitle: {
         width: 100,
         width: 115,
-       // marginLeft: '-7%',
        fontWeight: 'bold',
      },
      categoryquantity: {
@@ -50,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
      count: {
       textAlign: 'center',
       paddingTop: theme.spacing(1),
-      // paddingLeft:theme.spacing(1),
       outline: '1px solid lightBlue',
       maxWidth: 20,
       minWidth: 20,

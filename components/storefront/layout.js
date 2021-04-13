@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Categories from '../storefront/categories';
 import Category from '../storefront/displaycategory';
 import Bag from '../storefront/bag';
 

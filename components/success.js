@@ -7,13 +7,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         paddingTop: theme.spacing(12),
-        // borderLeft: `1px solid ${theme.palette.divider}`,
       },
     categorytitle: {
          marginTop: '-88px',
          width: 100,
-        // paddingLeft: theme.spacing(3),
-        // marginLeft: '-7%',
         fontWeight: 'bold',
       },
       categoryquantity: {
@@ -27,10 +24,6 @@ const useStyles = makeStyles((theme) => ({
       },
       bagdetailbold: {
         fontWeight: 'bold',
-        // textAlign: 'center',
-      },
-      bagdetailregular: {
-        // textAlign: 'center',
       },
       backtohomebutton: {
         marginTop: theme.spacing(7),
@@ -63,7 +56,7 @@ const Success = () => {
             <Typography className={classes.bagdetailbold} variant="h6">Your order has been placed successfully</Typography>
             <Typography className={classes.bagdetailregular} color="textSecondary" variant="h6">You will receive confirmation message as soon as the order is confirmed.</Typography>
             <Typography className={classes.bagdetailregular} color="textSecondary" variant="h6" style={{marginTop: '20px'}}>Order Number: <strong>John - 271e</strong></Typography>
-            <Link href="/"><Button color="primary" variant="outlined" className={classes.trackbutton}><Typography variant="h6" className={classes.CTAbuttonstext}>Track Order</Typography></Button></Link>
+            <Link href="/track-order/[]"><Button color="primary" variant="outlined" className={classes.trackbutton}><Typography variant="h6" className={classes.CTAbuttonstext}>Track Order</Typography></Button></Link>
             <Link href="/"><Button color="primary" className={classes.backtohomebutton}><Typography variant="h6" className={classes.CTAbuttonstext}>Continue Shopping</Typography></Button></Link>
           </center>
         </div>

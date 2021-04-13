@@ -2,9 +2,6 @@ import React from 'react';
 import { AppBar, Button, Grid, Toolbar, Typography } from '@material-ui/core';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import { makeStyles } from '@material-ui/core/styles';
-// import Categories from '../storefront/categories';
-// import Category from '../storefront/displaycategory';
-// import Bag from '../storefront/bag';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,16 +13,12 @@ const useStyles = makeStyles((theme) => ({
       },
       benefits: {
         marginTop: theme.spacing(8),
-        //  width: '103.4%',
       },
       footercontainer: {
         position: 'relative',
       },
       footer: {
-        // position: 'absolute',
         marginTop: theme.spacing(6),
-        
-        // left: theme.spacing(75),
       }, 
       footertext: {
         fontWeight: 'light',
@@ -55,31 +48,26 @@ const useStyles = makeStyles((theme) => ({
       benefitsimagesone: {
         height: 60,
         width: 75,
-        //marginLeft: theme.spacing(79),
         marginTop: theme.spacing(8),
       },
       benefitsimagestwo: {
         height: 65,
         width: 50,
-       // marginLeft: theme.spacing(28),
         marginTop: theme.spacing(8),
       },
       benefitsimagesthree: {
         height: 60,
         width: 60,
-       // marginLeft: theme.spacing(28),
         marginTop: theme.spacing(8),
       },
       benefittext: {
         color: '#fff',
         marginLeft: theme.spacing(1),
-        // marginTop: theme.spacing(1),
         fontSize: '20px'
       },
       benefittexttwo: {
         color: '#fff',
         marginLeft: theme.spacing(1),
-        // marginTop: theme.spacing(1),
         fontSize: '20px'
       },
       benefittextthree: {
@@ -90,8 +78,6 @@ const useStyles = makeStyles((theme) => ({
       },
       appbarcontent: {
         flex: '33%',
-        // padding: '10px',
-        // paddingLeft: '10%',
       },
     
 }));
@@ -102,22 +88,6 @@ const Footer =() => {
     return (
         <div className={classes.root}>
             <div className={classes.benefitsandfootercontainer}>
-            {/* <div className={classes.benefits}>
-              <AppBar className={classes.benefitsbar} elevation={0} color="primary" position="static" style={{ height: 230}}>
-                <div className={classes.appbarcontent}>
-                  <img className={classes.benefitsimagesone} src="/truck.png" alt="Truck"></img>
-                  <Typography className={classes.benefittext}>Fast Delivery</Typography>
-                </div>
-                <div className={classes.appbarcontent}>
-                  <img className={classes.benefitsimagestwo} src="/buyerprotection.png" alt="Buyer Protection"></img>
-                  <Typography className={classes.benefittexttwo}>Buyer Protection</Typography>
-                </div>
-                <div className={classes.appbarcontent}>
-                  <img className={classes.benefitsimagesthree} src="/24.png" alt="Buyer Protection"></img>
-                  <Typography className={classes.benefittextthree}>Customer Support</Typography>
-                </div>
-              </AppBar>
-            </div> */}
              <AppBar position="static" style={{height:250}}>
               <Toolbar>
                  <div className={classes.appbarcontent}>
