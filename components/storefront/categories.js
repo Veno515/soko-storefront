@@ -95,13 +95,14 @@ export default function VerticalTabs() {
           <Grid item lg={3} md={3} sm={12} xs={12}>
           <Tabs
             orientation="vertical"
-            variant="scrollable"
             value={value}
             onChange={handleChange}
             indicatorColor="primary"
             aria-label="Vertical tabs example"
             className={`${classes.tabs} ${classes.indicator}`}
-            
+            textColor="primary"
+            variant={"scrollable"}
+            scrollButtons={"on"}
           >
             <Tab className={classes.tab} label="Electronics (12)" {...a11yProps(0)} />
             <Tab className={classes.tab} label="Face Masks (3)" {...a11yProps(1)} />

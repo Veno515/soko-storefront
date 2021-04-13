@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor:'#E9EFF9'
     },
     setcountcontainer: {
-      marginTop: theme.spacing(13),
+      marginTop: theme.spacing(11.5),
     },
     dottedborderbottom: {
       borderBottom: `1px dotted ${theme.palette.divider}`,
@@ -95,8 +95,8 @@ const Products = () => {
                       {count && <Typography color="textSecondary" className={classes.boldtext}>UGX {118400 * count}</Typography>}
                       {!count &&<Typography color="textSecondary" className={classes.boldtext}>UGX 118,400</Typography>}
                     </div>
-                    <Divider style={{marginTop: '50px'}}/>
                 </Grid>
+                <Divider style={{marginTop: '50px'}}/>
                 <Grid item lg={2} md={2} sm={2} xs={2}>
                     <Typography className={classes.clearbagtext} color="textSecondary"  onClick={() => {
                           setCart(0);
@@ -143,30 +143,49 @@ const Products = () => {
                         <AddIcon fontSize="small" />
                       </Button>
                     </ButtonGroup>
-                    <Divider style={{marginTop: '42px'}}/>
+                  </Grid>
                 </Grid>
-                  <Grid item lg={9} md={9} sm={8} xs={8}>
-                    <Typography color="textSecondary" style={{marginTop: '20px'}} className={classes.boldtext}>Subtotal</Typography>
-                    <Typography color="textSecondary" style={{marginTop: '5px'}} className={classes.boldtext}>Delivery</Typography>
-                    <Divider style={{marginTop: '22px'}}/>
-                  </Grid>
-                  <Grid item lg={3} md={3} sm={4} xs={4}>
-                    <Typography color="textSecondary" style={{marginTop: '20px', float: 'right'}} className={classes.boldtext}>UGX 118,400</Typography>
-                    <Typography color="textSecondary" style={{marginTop: '5px', float: 'right', color: '#03BC33'}} className={classes.boldtext}>Free</Typography>
-                    <Divider style={{marginTop: '95px'}}/>
-                  </Grid>
+                <Divider style={{marginTop: '42px'}}/>
 
-                  <Grid item lg={9} md={9} sm={7} xs={7}>
-                    <Typography style={{marginTop: '20px'}} className={classes.boldtext}>Total</Typography>
-                    <Typography variant="body2" color="textSecondary" style={{marginTop: '5px'}} className={classes.boldtext}><em>Inclusive of all taxes</em></Typography>
-                    <Divider style={{marginTop: '22px'}}/>
+                <div style={{marginTop: '20px'}}>
+                  <Grid container>
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <Typography color="textSecondary" className={classes.boldtext}>Subtotal</Typography>
+                    </Grid>
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <Typography color="textSecondary" style={{float: 'right', fontWeight:'bold'}}>UGX 118,400</Typography> 
+                    </Grid> 
                   </Grid>
-                  <Grid item lg={3} md={3} sm={5} xs={5}>
-                    <Typography style={{marginTop: '20px', float: 'right'}} className={classes.boldtext}>UGX 118,400</Typography>
-                    <Divider style={{marginTop: '91px'}}/>
+                </div>
+
+                <div style={{marginTop: '20px'}}>
+                <Grid container>
+                <Grid item lg={6} md={6} sm={6} xs={6}>
+                  <Typography color="textSecondary" className={classes.boldtext}>Delivery</Typography>
                   </Grid>
-                  <Typography color="textSecondary" style={{marginTop: '20px', float: 'right', color: '#03BC33'}} className={classes.boldtext}>You are about to save UGX 10,000 on this order.</Typography>
-             </Grid>
+                  <Grid item lg={6} md={6} sm={6} xs={6}>
+                  <Typography color="textSecondary" style={{  color: '#03BC33', float: 'right'}} className={classes.boldtext}>Free</Typography>
+                  </Grid>
+                  </Grid>
+                  <Divider style={{marginTop: '30px'}}/>
+                </div>
+
+
+                <div style={{marginTop: '20px'}}>
+                  <Grid container>
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <Typography className={classes.boldtext}>Total</Typography>
+                    </Grid>
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <Typography style= {{float: 'right'}} className={classes.boldtext}>UGX 118,400</Typography>
+                    </Grid>
+                    <Grid item lg={6} md={6} sm={6} xs={6}>
+                      <Typography variant="body2" color="textSecondary" style={{marginTop: '5px'}} className={classes.boldtext}><em>Inclusive of all taxes</em></Typography>
+                    </Grid>
+                  </Grid>
+                </div>
+                <Divider style={{marginTop: '30px'}}/>
+                <Typography color="textSecondary" style={{marginTop: '20px', color: '#03BC33'}} className={classes.boldtext}>You are about to save UGX 10,000 on this order.</Typography>
         </div>
     )
 };
