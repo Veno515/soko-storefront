@@ -11,13 +11,13 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 0,
     // slidesToSlide: 1 
     // paritialVisibilityGutter: 10
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 5,
+    items: 0,
     // slidesToSlide: 2, 
     paritialVisibilityGutter: 10
   }
@@ -61,7 +61,7 @@ const Simple = ({ deviceType }) => {
                 style={{  height: "220px",borderRadius:'10px' }}
                 src={image.path}
             />
-            <Typography variant="h5">{image.name.slice(20)}...</Typography>
+            <Typography variant="h5">{image.name.slice(1, 20)}...</Typography>
             </div>
         );
       })}

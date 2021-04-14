@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     },
     nextbutton: {
         position: 'absolute',
-        top:-400,
+        top:-320,
         right: theme.spacing(1),
         borderRadius: '100%',
         maxWidth: 10,
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         },
     prevbutton: {
         position: 'absolute',
-        top:-400,
+        top:-320,
         right: theme.spacing(7),
         borderRadius: '100%',
         maxWidth: 10,

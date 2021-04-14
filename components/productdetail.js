@@ -9,6 +9,8 @@ import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Footer from '../components/footer';
@@ -16,6 +18,10 @@ import { useCart } from '../hooks/useCart';
 import Index from "./simplecarousel";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const tutorialSteps = [
   {
@@ -144,6 +150,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 250,
     minHeight: 50,
     backgroundColor: '#FADC5B',
+    [theme.breakpoints.up('md')]: {
+      marginLeft: theme.spacing(1), 
+      marginTop: theme.spacing(0)
+    },
     [theme.breakpoints.down('sm')]: {
       marginLeft: theme.spacing(1), 
       marginTop: theme.spacing(2)
@@ -183,6 +193,19 @@ export default function ProductDetail() {
     const maxSteps = tutorialSteps.length;
     const {cart,setCart} = useCart();
     const [count, setCount] = React.useState(1);
+    const [open, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+      setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    };
   
     const handleNext = () => {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -266,7 +289,12 @@ export default function ProductDetail() {
                     </ButtonGroup>
                     <div className={classes.productctabuttons}>
                       <Button className={classes.addtobagbutton} size="large" variant="outlined" color="primary" onClick={() => {
-                      setCart(cart +1);}}><Typography variant="h6" className={classes.CTAbuttonstext}>Add to Bag</Typography></Button>
+                      setCart(cart +1); handleClick();}}><Typography variant="h6" className={classes.CTAbuttonstext}>Add to Bag</Typography></Button>
+                      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+                        <Alert onClose={handleClose} severity="info">
+                          <strong>Item added to bag</strong>
+                        </Alert>
+                      </Snackbar>
                       <Button color="primary" className={classes.buynowbutton}><Typography variant="h6" className={classes.CTAbuttonstext}>Buy Now</Typography></Button>
                     </div>
                 </Grid>

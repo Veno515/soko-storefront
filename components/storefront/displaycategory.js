@@ -2,9 +2,15 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { Badge, Button, Grid, Paper, Typography, ButtonBase } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import Link from 'next/link';
 import Search from '../storefront/searchproducts';
 import { useCart } from '../../hooks/useCart';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -132,6 +138,20 @@ const data = [
 export default function Category() {
   const classes = useStyles();
   const {cart,setCart} = useCart();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
 
   return (
     <div className={classes.root}>
@@ -174,7 +194,13 @@ export default function Category() {
                   <Grid item >
                     <Button onClick={() => {
                       setCart(cart +1);
+                      handleClick();
               }}  className={classes.addtobagbtn} variant="outlined" color="primary"><Typography className={classes.buttontext}>+ Add</Typography></Button>
+               <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="info">
+                  <strong>Item added to bag</strong>
+                </Alert>
+              </Snackbar>
                   </Grid>
                 </Grid>
               </Grid>

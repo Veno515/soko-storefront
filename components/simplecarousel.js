@@ -5,6 +5,7 @@ import UAParser from "ua-parser-js";
 import React, { Fragment } from "react";
 import Simple from "../components/carousel";
 import Section from "../components/section";
+import { Grid } from "@material-ui/core";
 
 
 // Because this is an inframe, so the SSR mode doesn't not do well here.
@@ -12,9 +13,9 @@ import Section from "../components/section";
 const Index = ({ deviceType }) => {
   return (
     <Fragment>
-        <Section>
-            <Simple deviceType={deviceType} />
-        </Section>
+      <Section>
+        <Simple deviceType={deviceType} />
+      </Section>
     </Fragment>
   );
 };

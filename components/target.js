@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     float: 'right',
+    position: 'sticky',
     marginRight: theme.spacing(26),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   navtext: {
-    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
     cursor: 'pointer',
   },
   account: {
@@ -74,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection:'row',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
       float: 'left',
       paddingTop: theme.spacing(1),
       marginLeft: theme.spacing(-4),
@@ -86,13 +86,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: 40,
       marginBottom: theme.spacing(1),
+      marginTop: theme.spacing(2),
     },
   }
 }));
 
 export default function Target() {
   const classes = useStyles();
-
   const {cart,setCart} = useCart();
 
   return (
