@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Badge, Button, Grid, Paper, Typography, ButtonBase } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import Tooltip from '@material-ui/core/Tooltip';
 import Link from 'next/link';
 import Search from '../storefront/searchproducts';
 import { useCart } from '../../hooks/useCart';
@@ -195,12 +196,16 @@ export default function Category() {
                     <Button onClick={() => {
                       setCart(cart +1);
                       handleClick();
-              }}  className={classes.addtobagbtn} variant="outlined" color="primary"><Typography className={classes.buttontext}>+ Add</Typography></Button>
-               <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="info">
-                  <strong>Item added to bag</strong>
-                </Alert>
-              </Snackbar>
+                  }} className={classes.addtobagbtn} variant="outlined" color="primary"> 
+                      <Tooltip title={<Typography variant="h6">Add to bag</Typography>} aria-label="Add">
+                        <Typography className={classes.buttontext}>+ Add</Typography>
+                      </Tooltip>
+                    </Button>
+                    <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+                      <Alert onClose={handleClose} severity="info">
+                        <strong>Item added to bag</strong>
+                      </Alert>
+                    </Snackbar>
                   </Grid>
                 </Grid>
               </Grid>
