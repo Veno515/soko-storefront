@@ -152,6 +152,7 @@ const useStyles = makeStyles((theme) => ({
   addaddress: {
     color: '#1569C8',
     position: 'absolute',
+    cursor: 'pointer',
     top: '46%',
     [theme.breakpoints.down('sm')]: {
       top: 100

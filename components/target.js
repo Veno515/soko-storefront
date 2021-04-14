@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       marginLeft: theme.spacing(26),
     },
+    "@media (width: 1024px)":{
+      marginLeft: theme.spacing(15)
+    },
   },
   leftsidecont: {
     display: 'flex',
@@ -121,8 +124,10 @@ export default function Target() {
                 </Link>
               </div>
               <div className={classes.account}>
-                <PersonOutlineOutlinedIcon fontSize="large" style={{color:'grey',cursor:'pointer'}}/>
-                <Link href='/#'>
+                <Link href='/account/1'>
+                  <PersonOutlineOutlinedIcon fontSize="large" style={{color:'grey',cursor:'pointer'}}/>
+                </Link>
+                <Link href='/account/1'>
                   <Typography className={classes.navtext} variant="h6" color="textSecondary">Account</Typography>
                 </Link>
               </div>
